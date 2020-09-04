@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>forms</title>
+	<script type="text/javascript">
+		function nickchange()
+		{
+			if(yes.checked)
+			{
+				nick.style.display="inline";
+				nickname.setAttribute('required',true);
+			}
+			else
+			{
+				nickname.removeAttribute('required');
+				nick.style.display="none";
+			}
+		}
+	</script>
+	<link rel="stylesheet" type="text/css" href="formstyle.css">
+</head>
+<body>
+	<form>
+	<label for='name'>Name</label>
+		<input type='text' id='name' name='name' pattern='(^?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$'><br/>
+		<lable> Email:<input type='email' name='email'></lable><br/>
+		Gender<br/>
+		<label>Male<input type='radio' name='gender' value='male'></label><br/>
+		<label>Female<input type='radio' name='gender' value='female'></label><br/>
+		Favorite Food<br/>
+		<label>Pizza<input type='radio' name='food' value='pizza'></label><br/>
+		<label>Samosa<input type='radio' name='food' value='samosa'></label><br/>
+		<label>Burger<input type='radio' name='food' value='burger'></label><br/>
+		<label>Nickname<input type='checkbox' input id='yes' onchange="nickchange()"></label>
+		<div id='nick'><br/>
+			<label for='nickname'>Nickname:</label>
+			<input type='text' name='nickname' id='nickname'><br/>
+		</div>
+
+		<input type='submit'>
+		</form>
+
+</body>
+</html>
